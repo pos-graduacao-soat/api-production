@@ -6,6 +6,8 @@ export class Order extends ValueObject<Order> {
   public constructor(props: Partial<Order>) {
     super(props)
   }
+  public id: string
+
   public customer?: Customer
 
   public products: OrderProduct[]

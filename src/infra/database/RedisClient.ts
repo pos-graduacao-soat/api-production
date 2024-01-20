@@ -31,4 +31,8 @@ export class RedisClient {
   async del(key: string): Promise<void> {
     await this.cache.del(key)
   }
+
+  async keys(pattern: string): Promise<string[]> {
+    return this.cache.keys(pattern)
+  }
 }
