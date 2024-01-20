@@ -4,7 +4,9 @@ import { env } from '../../main/env'
 
 @injectable()
 export class RedisClient {
-  constructor(protected readonly cache: Redis) {
+  protected readonly cache: Redis
+
+  constructor() {
     try {
       this.cache = new Redis({
         port: env.redisPort,
