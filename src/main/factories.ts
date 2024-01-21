@@ -6,6 +6,7 @@ import { GetOpenProductionOrdersUseCase } from '../domain/usecases/GetOpenProduc
 import { GetNewOrdersUseCase } from '../domain/usecases/GetNewOrders/GetNewOrders'
 import { GetNewOrdersScheduler } from '../infra/schedulers/GetNewOrders'
 import { HttpService } from '../infra/http/HttpService'
+import { UpdateProductionOrderStatusUseCase } from '../domain/usecases/UpdateProductionOrderStatus/UpdateProductionOrderStatus'
 
 export async function initializeContainer() {
   container.registerSingleton('RedisClient', RedisClient)
@@ -16,6 +17,7 @@ export async function initializeContainer() {
   container.registerSingleton('IProductionOrderRepository', RedisProductionOrderRepository)
 
   container.registerSingleton('IGetOpenProductionOrdersUseCase', GetOpenProductionOrdersUseCase)
+  container.registerSingleton('IUpdateProductionOrderStatusUseCase', UpdateProductionOrderStatusUseCase)
   container.registerSingleton('IGetNewOrdersUseCase', GetNewOrdersUseCase)
 
   container.registerSingleton('GetNewOrdersScheduler', GetNewOrdersScheduler)
