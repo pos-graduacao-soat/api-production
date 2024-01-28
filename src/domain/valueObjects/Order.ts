@@ -1,4 +1,3 @@
-import { Customer } from './Customer'
 import { ValueObject } from './valueObject'
 import { OrderProduct } from './OrderProduct'
 
@@ -7,9 +6,6 @@ export class Order extends ValueObject<Order> {
     super(props)
   }
   public id: string
-
-  public customer?: Customer
-
   public products: OrderProduct[]
 
   public status: Status

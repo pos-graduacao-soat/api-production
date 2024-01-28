@@ -6,7 +6,7 @@ import { env } from '../../../main/env'
 import { IHttpResponseModel } from '../../http/interfaces/IHttpResponseModel'
 import { OrderProduct } from '../../../domain/valueObjects/OrderProduct'
 
-interface GetOrderByIdResponseModel extends IHttpResponseModel {
+export interface GetOrderByIdResponseModel extends IHttpResponseModel {
   data: {
     id: string
     status: string
@@ -20,7 +20,7 @@ interface GetOrderByIdResponseModel extends IHttpResponseModel {
   }
 }
 
-interface ListOrdersResponseModel extends IHttpResponseModel {
+export interface ListOrdersResponseModel extends IHttpResponseModel {
   data: {
     id: string
     status: string

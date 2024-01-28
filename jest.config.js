@@ -10,6 +10,7 @@ module.exports = {
     '<rootDir>/src/domain/errors/', 
     '<rootDir>/src/main/',
     '<rootDir>/src/presentation/gateway/errors/',
+    '<rootDir>/src/presentation/gateway/middlewares/',
     '<rootDir>/src/.*\\index\\.ts',
   ],
   collectCoverageFrom: [
@@ -18,6 +19,7 @@ module.exports = {
     '!<rootDir>/src/domain/errors/**',
     '!<rootDir>/src/main/**',
     '!<rootDir>/src/presentation/gateway/errors/**',
+    '!<rootDir>/src/presentation/gateway/middlewares/**',
     '!<rootDir>/**/index.ts',
     '!<rootDir>/src/.*\\index\\.ts'
   ],
