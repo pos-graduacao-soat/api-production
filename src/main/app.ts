@@ -3,17 +3,13 @@ import { config } from 'dotenv'
 
 config()
 
-import { initializeContainer } from './factories'
+import { initializeContainer, startConsumers } from './factories'
 import { startHttpServer } from '../presentation/gateway/httpServer'
-import { container } from 'tsyringe'
-import { GetNewOrdersScheduler } from '../infra/schedulers/GetNewOrders'
 
 async function startApp() {
   await initializeContainer()
+  await startConsumers()
   startHttpServer()
-
-  const scheduler = container.resolve<GetNewOrdersScheduler>('GetNewOrdersScheduler')
-  scheduler.execute()
 }
 
 startApp().catch(error => {
