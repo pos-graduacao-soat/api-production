@@ -25,6 +25,19 @@ jest.mock('../../../../src/infra/http/HttpService', () => {
   }
 })
 
+jest.mock('../../../../src/infra/amqp/RabbitMQService', () => {
+  return jest.fn().mockImplementation(() => {
+    return {
+      connect: jest.fn(),
+      publish: jest.fn(),
+      ack: jest.fn(),
+      consume: jest.fn(),
+      disconnect: jest.fn(),
+      nack: jest.fn(),
+    }
+  })
+})
+
 describe('ProductionOrderRoutes', () => {
   let redisMemoryServer: RedisMemoryServer
   let server: Server
