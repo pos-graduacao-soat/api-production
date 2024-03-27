@@ -74,4 +74,4 @@ jobs:
 
       - name: Restart Kubernetes deployment
         run: |
-          kubectl rollout restart deployment/api-entity
+          kubectl rollout restart deployment/api-production
